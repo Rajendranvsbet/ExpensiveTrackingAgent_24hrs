@@ -1,0 +1,8 @@
+{
+  "name": "Expense Tracking Agent",
+  "description": "A premium fintech-style expense tracker featuring visual analytics, budget guardrails, expense history filters, and smart reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

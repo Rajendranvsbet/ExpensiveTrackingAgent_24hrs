@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Fraunces", Georgia, serif;
+
+  /* Redefine slate/gray/neutral to crisp clean whites and sleek modern grays (strictly no black/near-black) */
+  --color-slate-50: #FAFAFA;   /* Ultra-clean off-white canvas */
+  --color-slate-100: #F4F4F5;  /* Soft light gray separator */
+  --color-slate-200: #E4E4E7;  /* Border gray */
+  --color-slate-300: #D4D4D8;  /* Border gray hover */
+  --color-slate-400: #A1A1AA;  /* Muted neutral text */
+  --color-slate-500: #71717A;  /* Gray secondary text */
+  --color-slate-600: #52525B;  /* Gray body text */
+  --color-slate-700: #3F3F46;  /* Gray sub-headings */
+  --color-slate-800: #3F4E46;  /* Deep moss gray (soft, organic, no black) */
+  --color-slate-900: #2C3830;  /* Rich dark sage gray (highly legible, 100% black-free) */
+  --color-slate-950: #222B25;  /* Dark forest moss */
+
+  /* Sync gray with slate for consistent styling elements */
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F4F4F5;
+  --color-gray-200: #E4E4E7;
+  --color-gray-300: #D4D4D8;
+  --color-gray-400: #A1A1AA;
+  --color-gray-500: #71717A;
+  --color-gray-600: #52525B;
+  --color-gray-700: #3F3F46;
+  --color-gray-800: #3F4E46;
+  --color-gray-900: #2C3830;
+
+  /* Redefine primary blue to be a stunning premium Green theme */
+  --color-blue-50: #ECFDF5;    /* Very soft mint green background */
+  --color-blue-100: #D1FAE5;   /* Light mint green */
+  --color-blue-200: #A7F3D0;   /* Pastel green */
+  --color-blue-300: #6EE7B7;   /* Vibrant light green */
+  --color-blue-400: #34D399;   /* Bright green */
+  --color-blue-500: #10B981;   /* Primary Emerald Green */
+  --color-blue-600: #059669;   /* Deep emerald green for primary buttons */
+  --color-blue-700: #047857;   /* Forest green */
+  --color-blue-800: #065F46;   /* Rich pine green */
+  --color-blue-900: #0C4E3B;   /* Deep dark forest green (no black) */
+  --color-blue-950: #0D3F30;
+
+  /* Redefine indigo to be a complementary subtle Sage / Mint Gray */
+  --color-indigo-50: #F0FDF4;
+  --color-indigo-100: #DCFCE7;
+  --color-indigo-200: #BBF7D0;
+  --color-indigo-300: #86EFAC;
+  --color-indigo-400: #4ADE80;
+  --color-indigo-500: #22C55E; /* Accent green */
+  --color-indigo-600: #16A34A;
+  --color-indigo-700: #15803D;
+  --color-indigo-800: #166534;
+  --color-indigo-900: #1B4D3E; /* Deep pine */
+
+  /* Keep amber warm for status alerts, but make it clean yellow-gold */
+  --color-amber-50: #FFFDF5;
+  --color-amber-100: #FEF9C3;
+  --color-amber-200: #FEF08A;
+  --color-amber-300: #FDE047;
+  --color-amber-400: #FACC15;
+  --color-amber-500: #EAB308; /* Pure clean amber */
+  --color-amber-600: #CA8A04;
+  --color-amber-700: #A16207;
+  --color-amber-800: #854D0E;
+  --color-amber-900: #713F12;
+}
+
+/* Custom premium transitions and custom styling rules */
+body {
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+/* Glassmorphism custom classes */
+.glass-panel, .glass-card {
+  background: rgba(252, 251, 249, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-slate-200);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px -2px rgba(93, 86, 71, 0.04), 0 2px 6px -1px rgba(93, 86, 71, 0.02);
+}
+
+/* Sidebar and general theme selectors */
+.sidebar-link {
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: var(--color-blue-50);
+  color: var(--color-blue-600);
+}
+
+.active-nav {
+  background: var(--color-blue-600);
+  color: white;
+}
+
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--color-blue-500), var(--color-indigo-500));
+}
+
+.status-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+/* Hide print layout elements */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: var(--color-slate-900) !important;
+  }
+}

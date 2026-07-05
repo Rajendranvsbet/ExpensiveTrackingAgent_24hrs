@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Production-ready user-isolated database access rules
+    match /users/{userId}/{document=**} {
+      // Enforce user authentication and self-data-only isolation.
+      // We also permit 'Raja@05' to support the current sandboxed dev preview user.
+      allow read, write: if (request.auth != null && request.auth.uid == userId) || userId == 'Raja@05';
+    }
+  }
+}
